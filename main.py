@@ -9,9 +9,23 @@ from src.preprocessing import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from pydantic import BaseModel
-
+from fastapi.middleware.cors import CORSMiddleware
 # Initialize FastAPI
 app = FastAPI()
+
+
+# Allow all origins
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # This allows all domains
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allows all headers
+)
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello, World!"}
 
 class PredictionInput(BaseModel):
     baseline_value: float
