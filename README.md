@@ -78,6 +78,6 @@ docker run -p 8000:8000 medistat-app
 ### Locust file for testing apis
   ![locust](https://github.com/user-attachments/assets/4fe189da-355f-4bdc-b487-71be978368ce)
 ## Front-end Link
-
+[https://youtu.be/v87N2UdpF_E](url)
 ## YouTube Link for demonstration
 
