@@ -17,7 +17,7 @@ app = FastAPI()
 # Allow all origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # This allows all domains
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],  # Allows all HTTP methods (GET, POST, etc.)
     allow_headers=["*"],  # Allows all headers
@@ -190,7 +190,7 @@ async def fine_tune(file: UploadFile = File(...), epochs: int = 10):
         testY_true = np.argmax(testY, axis=1)
         accuracy = accuracy_score(testY_true, predictions)
 
-        # Save the updated model and scaler
+
         with open(MODEL_PATH, "wb") as f:
             pickle.dump(model, f)
         os.remove(file_path)  # Clean up the temporary file
